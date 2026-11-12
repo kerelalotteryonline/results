@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- School ka naam neeche <title> aur <h1> mein badlo -->
+<title>Student Result Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="card">
+  <h1>Mera School</h1>
+  <p class="sub">Annual Examination 2026 &mdash; Result</p>
+
+  <form id="f" autocomplete="off">
+    <label for="roll">Apna Roll Number likho</label>
+    <input id="roll" name="roll" type="text" placeholder="e.g. 1001" required maxlength="40">
+    <button type="submit" id="btn">Result Dekho</button>
+  </form>
+  <p id="err" class="err" role="alert"></p>
+</main>
+
+<div id="overlay" class="overlay" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <button class="close" id="close" aria-label="Band karo">&times;</button>
+    <div class="badge" id="badge"></div>
+    <h2 id="title"></h2>
+    <p id="msg"></p>
+    <table>
+      <tr><td>Name</td><td id="r-name"></td></tr>
+      <tr><td>Roll No</td><td id="r-roll"></td></tr>
+      <tr><td>Class</td><td id="r-class"></td></tr>
+      <tr id="row-marks"><td>Marks</td><td id="r-marks"></td></tr>
+      <tr><td>Result</td><td id="r-result"></td></tr>
+    </table>
+    <button class="print" onclick="window.print()">Print</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
